@@ -1,0 +1,444 @@
+#onboarding-page-modal .modal-dialog {
+    height: calc(100vh - 2rem);
+    max-height: calc(100vh - 2rem);
+}
+
+#onboarding-page-modal .modal-content {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-height: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#onboarding-page-modal .modal-body {
+    flex: 0 1 auto;
+    height: calc(100vh - 16rem);
+    max-height: calc(100vh - 16rem);
+    min-height: 8rem;
+    overflow-x: hidden;
+    overflow-y: scroll !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+#onboarding-page-modal #onboarding-current-image,
+#onboarding-page-modal #onboarding-current-background-image {
+    display: block;
+    max-width: 100%;
+    max-height: 160px !important;
+    object-fit: contain;
+}
+
+.onboarding-preview-card {
+    position: sticky;
+    top: 1rem;
+}
+
+#onboarding-page-modal .onboarding-modal-preview {
+    position: sticky;
+    top: 0;
+}
+
+#onboarding-page-modal .onboarding-modal-phone-frame {
+    width: min(100%, 210px);
+    height: 410px;
+    min-height: 410px;
+    padding: 5px;
+    border-radius: 32px;
+}
+
+#onboarding-page-modal .onboarding-phone-screen {
+    border-radius: 25px;
+}
+
+#onboarding-page-modal .onboarding-phone-status {
+    height: 26px;
+    flex-basis: 26px;
+    padding-inline: 12px;
+    font-size: 10px;
+}
+
+#onboarding-page-modal .onboarding-phone-status-icons {
+    gap: 3px;
+    font-size: 9px;
+}
+
+#onboarding-page-modal .onboarding-iphone-dynamic-island {
+    top: 5px;
+    width: 54px;
+    height: 15px;
+}
+
+#onboarding-page-modal .onboarding-phone-skip-row {
+    height: 27px;
+    flex-basis: 27px;
+    padding-inline: 14px;
+}
+
+#onboarding-page-modal .onboarding-phone-skip-row span {
+    align-self: center;
+    color: #f5ad13;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+#onboarding-page-modal .onboarding-phone-illustration {
+    height: 39%;
+    flex-basis: 39%;
+    padding-inline: 14px;
+}
+
+#onboarding-page-modal .onboarding-phone-copy {
+    padding-inline: 12px;
+}
+
+#onboarding-page-modal .onboarding-phone-copy h4 {
+    font-size: 16px;
+}
+
+#onboarding-page-modal .onboarding-phone-copy p {
+    font-size: 11px;
+}
+
+#onboarding-page-modal .onboarding-phone-bottom {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    gap: 12px 6px;
+    padding-bottom: 10px;
+}
+
+#onboarding-page-modal .onboarding-phone-bottom #onboarding-preview-back,
+#onboarding-page-modal .onboarding-phone-bottom #onboarding-preview-next,
+#onboarding-page-modal .onboarding-phone-bottom button {
+    min-height: 36px;
+    padding: 6px 8px;
+    font-size: 12px;
+}
+
+.onboarding-phone-frame {
+    width: min(100%, 310px);
+    height: min(72vh, 650px);
+    min-height: 500px;
+    padding: 7px;
+    border: 2px solid #aeb4bd;
+    border-radius: 38px;
+    background: #17191d;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, .22);
+}
+
+.onboarding-phone-screen {
+    position: relative;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 30px;
+    background: #fdfcff;
+    color: #172033;
+}
+
+.onboarding-phone-background {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+    opacity: 1;
+}
+
+.onboarding-phone-status,
+.onboarding-phone-illustration,
+.onboarding-phone-copy,
+.onboarding-phone-bottom {
+    position: relative;
+    z-index: 1;
+}
+
+.onboarding-phone-status {
+    display: flex;
+    height: 31px;
+    flex: 0 0 31px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 17px 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.onboarding-phone-status-icons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #33343a;
+    font-size: 12px;
+}
+
+.onboarding-phone-signal {
+    display: flex;
+    height: 12px;
+    align-items: flex-end;
+    gap: 1px;
+}
+
+.onboarding-phone-signal i {
+    display: block;
+    width: 2px;
+    border-radius: 2px 2px 0 0;
+    background: currentColor;
+}
+
+.onboarding-phone-signal i:nth-child(1) { height: 4px; }
+.onboarding-phone-signal i:nth-child(2) { height: 6px; }
+.onboarding-phone-signal i:nth-child(3) { height: 9px; }
+.onboarding-phone-signal i:nth-child(4) { height: 12px; }
+
+.onboarding-phone-wifi {
+    width: 13px;
+    overflow: hidden;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 10px;
+}
+
+.onboarding-phone-battery {
+    position: relative;
+    display: block;
+    min-width: 19px;
+    width: 19px;
+    height: 10px;
+    padding: 1px;
+    border: 1px solid #33343a;
+    border-radius: 3px;
+}
+
+.onboarding-phone-battery::after {
+    position: absolute;
+    top: 2px;
+    right: -3px;
+    width: 2px;
+    height: 4px;
+    border-radius: 0 2px 2px 0;
+    background: #33343a;
+    content: '';
+}
+
+.onboarding-phone-battery i {
+    display: block;
+    width: 70%;
+    height: 100%;
+    border-radius: 1px;
+    background: #33343a;
+}
+
+.onboarding-iphone-dynamic-island {
+    position: absolute;
+    z-index: 2;
+    top: 7px;
+    left: 50%;
+    width: 70px;
+    height: 19px;
+    transform: translateX(-50%);
+    border-radius: 12px;
+    background: #050505;
+}
+
+.onboarding-phone-skip-row {
+    display: flex;
+    height: 35px;
+    flex: 0 0 35px;
+    justify-content: flex-end;
+    padding: 0 20px;
+}
+
+.onboarding-phone-skip-row button {
+    align-self: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #f5ad13;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.onboarding-phone-illustration {
+    display: flex;
+    height: 43%;
+    flex: 0 0 43%;
+    min-height: 145px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px 2px;
+}
+
+.onboarding-phone-illustration img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 0;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center;
+    image-rendering: auto;
+    border-radius: 16px;
+}
+
+.onboarding-phone-image-only .onboarding-phone-illustration {
+    position: static;
+    height: auto;
+    flex: 0 0 0;
+    min-height: 0;
+    padding: 0;
+}
+
+.onboarding-phone-image-only #onboarding-preview-image,
+.onboarding-phone-image-only #onboarding-modal-preview-image {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 0;
+}
+
+/* Full-screen generated artwork sits at z-index 0; keep the Skip control above it. */
+.onboarding-phone-image-only .onboarding-phone-skip-row {
+    position: relative;
+    z-index: 1;
+}
+
+.onboarding-phone-image-only .onboarding-phone-copy {
+    display: none;
+}
+
+.onboarding-phone-copy {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex: 0 0 auto;
+    padding: 8px 16px 0;
+    text-align: center;
+    overflow-wrap: anywhere;
+    scrollbar-width: thin;
+}
+
+.onboarding-phone-copy h4 {
+    margin: 0 0 13px;
+    color: #1c2737;
+    font-size: clamp(20px, 5.5vw, 27px);
+    font-weight: 750;
+    line-height: 1.18;
+}
+
+.onboarding-phone-copy p {
+    margin: 0;
+    color: #85858c;
+    font-size: clamp(13px, 3.7vw, 17px);
+    line-height: 1.55;
+}
+
+.onboarding-phone-bottom {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    right: 18px;
+    bottom: 17px;
+    left: 18px;
+    height: auto;
+    flex: 0 0 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 18px 8px;
+    padding: 0 0 14px;
+}
+
+.onboarding-phone-page-dots {
+    display: flex;
+    min-height: 9px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.onboarding-phone-page-dot {
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 8px;
+    background: #e2e3e7;
+    transition: width .2s ease, background-color .2s ease;
+}
+
+.onboarding-phone-page-dot.is-active {
+    width: 27px;
+    background: var(--onboarding-indicator-color, #f5ad13);
+}
+
+.onboarding-phone-bottom #onboarding-preview-back,
+.onboarding-phone-bottom #onboarding-preview-next {
+    min-height: 44px;
+    flex: 1 1 0;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.onboarding-phone-bottom #onboarding-preview-next {
+    border: 0;
+    background: #ffb511;
+    color: #ffffff;
+}
+
+.onboarding-phone-bottom #onboarding-preview-next:disabled {
+    opacity: .55;
+}
+
+.onboarding-iphone-home-indicator {
+    position: absolute;
+    z-index: 2;
+    bottom: 5px;
+    left: 50%;
+    width: 82px;
+    height: 4px;
+    transform: translateX(-50%);
+    border-radius: 3px;
+    background: #17191d;
+}
+
+@media (max-height: 700px) {
+    .onboarding-phone-frame {
+        height: min(76vh, 570px);
+        min-height: 460px;
+    }
+
+    .onboarding-phone-illustration {
+        height: 39%;
+        flex-basis: 39%;
+    }
+
+    .onboarding-phone-bottom {
+        gap: 18px;
+        bottom: 17px;
+        padding-bottom: 14px;
+    }
+}
+
+.onboarding-table-phone-frame {
+    width: min(100%, 295px);
+    height: min(82vh, 587px);
+    min-height: 560px;
+}

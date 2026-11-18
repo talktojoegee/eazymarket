@@ -1,0 +1,102 @@
+/* global jQuery, Toast, axios */
+/*
+ * Store Packages — list page interactions. Mirrors store-locations-index.js
+ * exactly (same wireConfirmModal helper, same jQuery $(el).modal() pattern).
+ *
+ * Promote-to-default and delete both surface their respective Bootstrap
+ * confirm modals. Delete surfaces the undeletable-default error from
+ * StorePackageObserver via Toast.fire.
+ */
+(function ($) {
+    'use strict';
+
+    function wireConfirmModal(opts) {
+        var modalEl = document.getElementById(opts.modalId);
+        var messageEl = document.getElementById(opts.messageId);
+        var confirmBtn = document.getElementById(opts.confirmId);
+        if (!modalEl || !confirmBtn) return;
+
+        var defaultMessage = messageEl ? messageEl.textContent : '';
+        var pendingUrl = null;
+
+        $(document).on('click', opts.trigger, function () {
+            pendingUrl = this.dataset.action || null;
+            if (messageEl && typeof opts.buildMessage === 'function') {
+                messageEl.textContent = opts.buildMessage($(this), defaultMessage);
+            }
+            $(modalEl).modal('show');
+        });
+
+        confirmBtn.addEventListener('click', function () {
+            if (!pendingUrl) return;
+            confirmBtn.disabled = true;
+
+            var token = $('meta[name="csrf-token"]').attr('content');
+            var done = function (success, message) {
+                Toast.fire({ icon: success ? 'success' : 'error', title: message || opts.errorFallback });
+                if (success) {
+                    $(modalEl).modal('hide');
+                    setTimeout(function () { window.location.reload(); }, 600);
+                } else {
+                    confirmBtn.disabled = false;
+                }
+            };
+
+            var headers = { 'X-CSRF-TOKEN': token, 'X-Requested-With': 'XMLHttpRequest' };
+
+            if (window.axios) {
+                window.axios.request({
+                    url: pendingUrl,
+                    method: opts.method,
+                    headers: headers,
+                }).then(function (response) {
+                    var data = response.data || {};
+                    done(!!data.success, data.message);
+                }).catch(function (err) {
+                    var msg = (err && err.response && err.response.data && err.response.data.message);
+                    done(false, msg);
+                });
+            } else {
+                $.ajax({
+                    url: pendingUrl,
+                    type: opts.method,
+                    headers: headers,
+                    success: function (resp) { done(!!(resp && resp.success), resp && resp.message); },
+                    error: function (xhr) { done(false, xhr.responseJSON && xhr.responseJSON.message); },
+                });
+            }
+        });
+    }
+
+    $(function () {
+        wireConfirmModal({
+            trigger: '.js-promote-default-package',
+            modalId: 'promoteDefaultPackageModal',
+            messageId: 'promoteDefaultPackageMessage',
+            confirmId: 'promoteDefaultPackageConfirm',
+            method: 'POST',
+            errorFallback: 'Could not promote package',
+            buildMessage: function ($btn, fallback) {
+                var name = $btn.data('package-name') || '';
+                return name
+                    ? 'Promote "' + name + '" to the store default package? The current default will be demoted.'
+                    : fallback;
+            },
+        });
+
+        wireConfirmModal({
+            trigger: '.js-delete-store-package',
+            modalId: 'deleteStorePackageModal',
+            messageId: 'deleteStorePackageMessage',
+            confirmId: 'deleteStorePackageConfirm',
+            method: 'DELETE',
+            errorFallback: 'Could not delete package',
+            buildMessage: function ($btn, fallback) {
+                var name = $btn.data('package-name') || '';
+                return name
+                    ? 'Delete "' + name + '"? This action cannot be undone.'
+                    : fallback;
+            },
+        });
+    });
+})(jQuery);

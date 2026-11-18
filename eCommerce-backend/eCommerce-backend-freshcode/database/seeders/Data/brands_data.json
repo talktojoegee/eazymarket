@@ -1,0 +1,486 @@
+[
+    {
+        "title": "Nike",
+        "description": "Sports apparel, footwear & equipment",
+        "scope_type": "global",
+        "status": "active"
+    },
+    {
+        "title": "Adidas",
+        "description": "German sportswear and accessories",
+        "scope_type": "global",
+        "status": "active"
+    },
+    {
+        "title": "Apple",
+        "description": "Consumer electronics, software & services",
+        "scope_type": "global",
+        "status": "active"
+    },
+    {
+        "title": "Samsung",
+        "description": "Electronics, smartphones, home appliances",
+        "scope_type": "global",
+        "status": "active"
+    },
+    {
+        "title": "Sony",
+        "description": "Electronics, gaming, entertainment",
+        "scope_type": "global",
+        "status": "active"
+    },
+    {
+        "title": "Generic",
+        "description": "Unbranded / generic products",
+        "scope_type": "global",
+        "status": "active"
+    },
+    {
+        "title": "Levi's",
+        "description": "Jeans, clothing & accessories",
+        "scope_type": "category",
+        "category_title": "Clothing",
+        "status": "active"
+    },
+    {
+        "title": "Zara",
+        "description": "Fast-fashion clothing",
+        "scope_type": "category",
+        "category_title": "Clothing",
+        "status": "active"
+    },
+    {
+        "title": "H&M",
+        "description": "Affordable fashion & accessories",
+        "scope_type": "category",
+        "category_title": "Clothing",
+        "status": "active"
+    },
+    {
+        "title": "Gap",
+        "description": "Casual clothing for all ages",
+        "scope_type": "category",
+        "category_title": "Clothing",
+        "status": "active"
+    },
+    {
+        "title": "The North Face",
+        "description": "Outdoor clothing & gear",
+        "scope_type": "category",
+        "category_title": "Clothing",
+        "status": "active"
+    },
+    {
+        "title": "Under Armour",
+        "description": "Performance apparel & footwear",
+        "scope_type": "category",
+        "category_title": "Clothing",
+        "status": "active"
+    },
+    {
+        "title": "Biba",
+        "description": "Ethnic wear for women",
+        "scope_type": "category",
+        "category_title": "Clothing",
+        "status": "active"
+    },
+    {
+        "title": "Manyavar",
+        "description": "Men's ethnic wear",
+        "scope_type": "category",
+        "category_title": "Clothing",
+        "status": "active"
+    },
+    {
+        "title": "Sketchers",
+        "description": "Athletic & casual shoes",
+        "scope_type": "category",
+        "category_title": "Shoes",
+        "status": "active"
+    },
+    {
+        "title": "Woodland",
+        "description": "Outdoor boots & shoes",
+        "scope_type": "category",
+        "category_title": "Shoes",
+        "status": "active"
+    },
+    {
+        "title": "Crocs",
+        "description": "Comfort footwear",
+        "scope_type": "category",
+        "category_title": "Shoes",
+        "status": "active"
+    },
+    {
+        "title": "Bata",
+        "description": "Everyday footwear",
+        "scope_type": "category",
+        "category_title": "Shoes",
+        "status": "active"
+    },
+    {
+        "title": "Puma",
+        "description": "Sportswear & active footwear",
+        "scope_type": "category",
+        "category_title": "Shoes",
+        "status": "active"
+    },
+    {
+        "title": "Converse",
+        "description": "Casual sneakers",
+        "scope_type": "category",
+        "category_title": "Shoes",
+        "status": "active"
+    },
+    {
+        "title": "Tata Consumer",
+        "description": "Tea, coffee & salt",
+        "scope_type": "category",
+        "category_title": "Food & Beverages",
+        "status": "active"
+    },
+    {
+        "title": "Haldiram's",
+        "description": "Namkeen, sweets & ready-to-eat",
+        "scope_type": "category",
+        "category_title": "Food & Beverages",
+        "status": "active"
+    },
+    {
+        "title": "Lay's",
+        "description": "Potato chips & snacks",
+        "scope_type": "category",
+        "category_title": "Food & Beverages",
+        "status": "active"
+    },
+    {
+        "title": "Coca-Cola",
+        "description": "Soft drinks & beverages",
+        "scope_type": "category",
+        "category_title": "Food & Beverages",
+        "status": "active"
+    },
+    {
+        "title": "PepsiCo",
+        "description": "Snacks, drinks & cereals",
+        "scope_type": "category",
+        "category_title": "Food & Beverages",
+        "status": "active"
+    },
+    {
+        "title": "Britannia",
+        "description": "Biscuits, cakes & dairy",
+        "scope_type": "category",
+        "category_title": "Food & Beverages",
+        "status": "active"
+    },
+    {
+        "title": "Amul",
+        "description": "Dairy products",
+        "scope_type": "category",
+        "category_title": "Food & Beverages",
+        "status": "active"
+    },
+    {
+        "title": "Quaker",
+        "description": "Oats & breakfast cereals",
+        "scope_type": "category",
+        "category_title": "Food & Beverages",
+        "status": "active"
+    },
+    {
+        "title": "Amy's Kitchen",
+        "description": "Organic frozen meals",
+        "scope_type": "category",
+        "category_title": "Food & Beverages",
+        "status": "active"
+    },
+    {
+        "title": "Nestlé",
+        "description": "Frozen foods & ready meals",
+        "scope_type": "category",
+        "category_title": "Food & Beverages",
+        "status": "active"
+    },
+    {
+        "title": "Beyond Meat",
+        "description": "Plant‑based meat alternatives",
+        "scope_type": "category",
+        "category_title": "Food & Beverages",
+        "status": "active"
+    },
+    {
+        "title": "Maybelline",
+        "description": "Cosmetics & makeup",
+        "scope_type": "category",
+        "category_title": "Cosmetics & Body Care",
+        "status": "active"
+    },
+    {
+        "title": "Revlon",
+        "description": "Makeup & beauty tools",
+        "scope_type": "category",
+        "category_title": "Cosmetics & Body Care",
+        "status": "active"
+    },
+    {
+        "title": "L'Oréal",
+        "description": "Skin care & hair care",
+        "scope_type": "category",
+        "category_title": "Cosmetics & Body Care",
+        "status": "active"
+    },
+    {
+        "title": "Cetaphil",
+        "description": "Gentle skincare for sensitive skin",
+        "scope_type": "category",
+        "category_title": "Cosmetics & Body Care",
+        "status": "active"
+    },
+    {
+        "title": "Dove",
+        "description": "Body care & soaps",
+        "scope_type": "category",
+        "category_title": "Cosmetics & Body Care",
+        "status": "active"
+    },
+    {
+        "title": "AXE",
+        "description": "Deodorants, body sprays & grooming",
+        "scope_type": "category",
+        "category_title": "Cosmetics & Body Care",
+        "status": "active"
+    },
+    {
+        "title": "Dolce & Gabbana",
+        "description": "Luxury perfumes & fragrances",
+        "scope_type": "category",
+        "category_title": "Cosmetics & Body Care",
+        "status": "active"
+    },
+    {
+        "title": "Gillette",
+        "description": "Men's grooming & razors",
+        "scope_type": "category",
+        "category_title": "Cosmetics & Body Care",
+        "status": "active"
+    },
+    {
+        "title": "American Tourister",
+        "description": "Luggage & bags",
+        "scope_type": "category",
+        "category_title": "Accessories",
+        "status": "active"
+    },
+    {
+        "title": "Skybags",
+        "description": "Backpacks, trolleys & duffels",
+        "scope_type": "category",
+        "category_title": "Accessories",
+        "status": "active"
+    },
+    {
+        "title": "Wildcraft",
+        "description": "Backpacks, outdoor gear & apparel",
+        "scope_type": "category",
+        "category_title": "Accessories",
+        "status": "active"
+    },
+    {
+        "title": "Titan",
+        "description": "Watches & jewelry",
+        "scope_type": "category",
+        "category_title": "Accessories",
+        "status": "active"
+    },
+    {
+        "title": "Fastrack",
+        "description": "Watches, sunglasses & accessories",
+        "scope_type": "category",
+        "category_title": "Accessories",
+        "status": "active"
+    },
+    {
+        "title": "Fossil",
+        "description": "Watches, bags & jewelry",
+        "scope_type": "category",
+        "category_title": "Accessories",
+        "status": "active"
+    },
+    {
+        "title": "Ray-Ban",
+        "description": "Sunglasses & eyewear",
+        "scope_type": "category",
+        "category_title": "Accessories",
+        "status": "active"
+    },
+    {
+        "title": "boAt",
+        "description": "Audio, wearables & tech accessories",
+        "scope_type": "category",
+        "category_title": "Accessories",
+        "status": "active"
+    },
+    {
+        "title": "New Era",
+        "description": "Hats & caps",
+        "scope_type": "category",
+        "category_title": "Accessories",
+        "status": "active"
+    },
+    {
+        "title": "Samsonite",
+        "description": "Luggage & travel gear",
+        "scope_type": "category",
+        "category_title": "Accessories",
+        "status": "active"
+    },
+    {
+        "title": "Xiaomi",
+        "description": "Smartphones & accessories",
+        "scope_type": "category",
+        "category_title": "Electronics",
+        "status": "active"
+    },
+    {
+        "title": "Dell",
+        "description": "Laptops & computers",
+        "scope_type": "category",
+        "category_title": "Electronics",
+        "status": "active"
+    },
+    {
+        "title": "JBL",
+        "description": "Speakers, headphones & audio",
+        "scope_type": "category",
+        "category_title": "Electronics",
+        "status": "active"
+    },
+    {
+        "title": "Logitech",
+        "description": "Computer peripherals",
+        "scope_type": "category",
+        "category_title": "Electronics",
+        "status": "active"
+    },
+    {
+        "title": "Philips",
+        "description": "Small home appliances",
+        "scope_type": "category",
+        "category_title": "Electronics",
+        "status": "active"
+    },
+    {
+        "title": "Prestige",
+        "description": "Cookware & kitchen appliances",
+        "scope_type": "category",
+        "category_title": "Electronics",
+        "status": "active"
+    },
+    {
+        "title": "Microsoft",
+        "description": "Gaming consoles & accessories",
+        "scope_type": "category",
+        "category_title": "Electronics",
+        "status": "active"
+    },
+    {
+        "title": "Nintendo",
+        "description": "Gaming hardware & games",
+        "scope_type": "category",
+        "category_title": "Electronics",
+        "status": "active"
+    },
+    {
+        "title": "Google",
+        "description": "Smart home devices",
+        "scope_type": "category",
+        "category_title": "Electronics",
+        "status": "active"
+    },
+    {
+        "title": "Amazon",
+        "description": "Smart home & electronics",
+        "scope_type": "category",
+        "category_title": "Electronics",
+        "status": "active"
+    },
+    {
+        "title": "Dettol",
+        "description": "Antiseptics & first aid",
+        "scope_type": "category",
+        "category_title": "Drugstore & Health Products",
+        "status": "active"
+    },
+    {
+        "title": "Band-Aid",
+        "description": "Adhesive bandages & first aid",
+        "scope_type": "category",
+        "category_title": "Drugstore & Health Products",
+        "status": "active"
+    },
+    {
+        "title": "Johnson & Johnson",
+        "description": "First aid, baby care & health",
+        "scope_type": "category",
+        "category_title": "Drugstore & Health Products",
+        "status": "active"
+    },
+    {
+        "title": "Himalaya",
+        "description": "Herbal supplements",
+        "scope_type": "category",
+        "category_title": "Drugstore & Health Products",
+        "status": "active"
+    },
+    {
+        "title": "Pampers",
+        "description": "Diapers & baby care",
+        "scope_type": "category",
+        "category_title": "Drugstore & Health Products",
+        "status": "active"
+    },
+    {
+        "title": "Huggies",
+        "description": "Diapers, wipes & baby toiletries",
+        "scope_type": "category",
+        "category_title": "Drugstore & Health Products",
+        "status": "active"
+    },
+    {
+        "title": "Oral-B",
+        "description": "Toothbrushes & oral care",
+        "scope_type": "category",
+        "category_title": "Drugstore & Health Products",
+        "status": "active"
+    },
+    {
+        "title": "Colgate",
+        "description": "Toothpaste & mouthwash",
+        "scope_type": "category",
+        "category_title": "Drugstore & Health Products",
+        "status": "active"
+    },
+    {
+        "title": "Mothercare",
+        "description": "Maternity & baby products",
+        "scope_type": "category",
+        "category_title": "Clothing",
+        "status": "active"
+    },
+    {
+        "title": "Nike Kids",
+        "description": "Children's sportswear and shoes",
+        "scope_type": "category",
+        "category_title": "Clothing",
+        "status": "active"
+    },
+    {
+        "title": "Dr. Scholl's",
+        "description": "Orthopedic comfort shoes",
+        "scope_type": "category",
+        "category_title": "Shoes",
+        "status": "active"
+    }
+]

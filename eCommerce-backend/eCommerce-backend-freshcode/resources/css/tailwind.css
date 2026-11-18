@@ -1,0 +1,331 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { color-scheme: light; }
+  html.dark { color-scheme: dark; }
+}
+
+@layer components {
+  .hui-tip {
+    position: absolute;
+    z-index: 60;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: #1a1c1e;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.3;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(3px);
+    transition: opacity .15s ease, transform .15s ease;
+  }
+  .hui-tip.is-visible { opacity: 1; transform: translateY(0); }
+
+  [data-hui-menu] { display: none; }
+  [data-hui-menu].is-open { display: block; animation: huiPop .16s cubic-bezier(.22,1,.36,1); }
+
+  @keyframes huiPop { from { opacity: 0; transform: scale(.97) translateY(-4px); } to { opacity: 1; transform: none; } }
+  @keyframes huiReveal { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+  .hui-reveal { opacity: 0; animation: huiReveal .5s cubic-bezier(.22,1,.36,1) forwards; }
+}
+
+/* ============================================================
+   Bootstrap/Tabler compat layer — styles the class names emitted
+   by shared Blade partials (order rows, expand, status badges) so
+   they render cleanly on Tailwind pages WITHOUT changing any PHP.
+   Scoped to pages that load this stylesheet (the new tw layout).
+   ============================================================ */
+
+/* layout utils */
+.d-flex { display: flex; }
+.d-inline-block { display: inline-block; }
+.flex-column { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.align-items-center { align-items: center; }
+.justify-content-center { justify-content: center; }
+.justify-content-between { justify-content: space-between; }
+.text-center { text-align: center; }
+.text-end { text-align: right; }
+.gap-1 { gap: .25rem; } .gap-2 { gap: .5rem; } .gap-3 { gap: 1rem; }
+.row { display: flex; flex-wrap: wrap; }
+.row.g-3 { gap: 1rem; }
+.col { flex: 1 1 0%; min-width: 0; }
+.col-auto { flex: 0 0 auto; width: auto; }
+.mt-1 { margin-top: .25rem; } .mt-2 { margin-top: .5rem; } .mt-3 { margin-top: 1rem; }
+.mb-0 { margin-bottom: 0; } .mb-1 { margin-bottom: .25rem; }
+.me-1 { margin-right: .25rem; }
+.p-3 { padding: 1rem; } .py-4 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.fs-3 { font-size: 1.4rem; }
+.small { font-size: 12px; }
+.fw-medium { font-weight: 500; }
+.fw-semibold { font-weight: 600; }
+.text-uppercase { text-transform: uppercase; }
+.text-capitalize { text-transform: capitalize; }
+.text-secondary { color: #6b7280; }
+.dark .text-secondary { color: #9ca3af; }
+.text-decoration-none { text-decoration: none; }
+.border { border: 1px solid #e5e7eb; }
+.dark .border { border-color: rgba(255,255,255,.06); }
+.border-top { border-top: 1px solid #eef0f2; }
+.dark .border-top { border-top-color: rgba(255,255,255,.07); }
+.rounded { border-radius: 8px; }
+.overflow-hidden { overflow: hidden; }
+.shadow-none { box-shadow: none; }
+
+/* card */
+.card { background: #fff; border: 1px solid #eef0f2; border-radius: 12px; }
+.dark .card { background: #1b1e21; border-color: rgba(255,255,255,.07); }
+.card.card-borderless { border-color: #eef0f2; }
+.card-body { padding: 1rem; }
+
+/* empty state */
+.empty { text-align: center; padding: 1.5rem; color: #6b7280; }
+.empty-icon { font-size: 26px; color: #9ca3af; margin-bottom: 6px; }
+.empty-title { font-size: 14px; font-weight: 500; color: #374151; }
+.dark .empty-title { color: #d1d5db; }
+
+/* badges + Tabler tint tones */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 11.5px; font-weight: 500; line-height: 1.4;
+  padding: 2px 8px; border-radius: 999px;
+  background: #f3f4f6; color: #4b5563; text-transform: none;
+}
+.badge.text-uppercase { text-transform: uppercase; letter-spacing: .02em; }
+.badge.bg-secondary-lt { background: #f3f4f6; color: #4b5563; }
+.badge.bg-blue-lt   { background: #eff6ff; color: #1d4ed8; }
+.badge.bg-azure-lt  { background: #ecfeff; color: #0e7490; }
+.badge.bg-green-lt  { background: #ecfdf5; color: #047857; }
+.badge.bg-lime-lt   { background: #f7fee7; color: #4d7c0f; }
+.badge.bg-teal-lt   { background: #f0fdfa; color: #0f766e; }
+.badge.bg-cyan-lt   { background: #ecfeff; color: #0e7490; }
+.badge.bg-red-lt    { background: #fef2f2; color: #b91c1c; }
+.badge.bg-pink-lt   { background: #fdf2f8; color: #be185d; }
+.badge.bg-orange-lt { background: #fff7ed; color: #c2410c; }
+.badge.bg-yellow-lt { background: #fefce8; color: #a16207; }
+.badge.bg-purple-lt { background: #f5f3ff; color: #6d28d9; }
+.badge.text-green { color: #047857; } .badge.text-red { color: #b91c1c; }
+.badge.text-secondary { color: #4b5563; }
+.dark .badge { background: rgba(255,255,255,.06); color: #d1d5db; }
+.dark .badge.bg-blue-lt   { background: rgba(59,130,246,.12); color: #93c5fd; }
+.dark .badge.bg-green-lt  { background: rgba(16,185,129,.12); color: #6ee7b7; }
+.dark .badge.bg-red-lt    { background: rgba(244,63,94,.12); color: #fca5a5; }
+.dark .badge.bg-orange-lt { background: rgba(249,115,22,.12); color: #fdba74; }
+.dark .badge.bg-yellow-lt { background: rgba(234,179,8,.12); color: #fde047; }
+.dark .badge.bg-purple-lt { background: rgba(139,92,246,.12); color: #c4b5fd; }
+.dark .badge.bg-azure-lt, .dark .badge.bg-cyan-lt { background: rgba(6,182,212,.12); color: #67e8f9; }
+.dark .badge.bg-secondary-lt { background: rgba(255,255,255,.06); color: #9ca3af; }
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+  height: 34px; padding: 0 12px; border-radius: 8px;
+  border: 1px solid #e5e7eb; background: #fff; color: #374151;
+  font-size: 13px; font-weight: 500; cursor: pointer;
+  transition: background .12s ease, border-color .12s ease;
+}
+.btn:hover { background: #f9fafb; }
+.btn-sm { height: 30px; padding: 0 10px; font-size: 12.5px; }
+.btn-icon { width: 34px; padding: 0; }
+.btn-icon.btn-sm { width: 30px; }
+.btn-ghost-secondary { border-color: transparent; background: transparent; color: #6b7280; }
+.btn-ghost-secondary:hover { background: #f3f4f6; color: #374151; }
+.btn-outline-primary { border-color: #e5e7eb; color: #374151; }
+.btn-outline-primary:hover { background: #fdf9ec; border-color: #f4c20d; color: #7d5a11; }
+.dark .btn { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.10); color: #d1d5db; }
+.dark .btn:hover { background: rgba(255,255,255,.08); }
+.dark .btn-ghost-secondary { background: transparent; border-color: transparent; }
+.dark .btn-ghost-secondary:hover { background: rgba(255,255,255,.06); }
+.dark .btn-outline-primary:hover { background: rgba(244,194,13,.12); border-color: #f4c20d; color: #f4c20d; }
+
+/* spinner (order.js expand loading) */
+.spinner-border {
+  display: inline-block; width: 1rem; height: 1rem; vertical-align: -2px;
+  border: 2px solid currentColor; border-right-color: transparent;
+  border-radius: 50%; animation: sbspin .7s linear infinite;
+}
+.spinner-border-sm { width: .85rem; height: .85rem; border-width: 2px; }
+@keyframes sbspin { to { transform: rotate(360deg); } }
+
+/* order-id cell: responsive thumbnails + square "+N" badge (main rows only) */
+table.dataTable tbody tr:not(.child) td .d-flex { flex-wrap: wrap; }
+table.dataTable tbody tr:not(.child) td img {
+  max-width: 44px; max-height: 44px; height: auto;
+  border-radius: 8px; object-fit: cover;
+}
+table.dataTable tbody tr:not(.child) td .badge[style] {
+  width: 44px !important; height: 44px !important;
+  padding: 0; border-radius: 8px; justify-content: center;
+  font-size: 12px; font-weight: 600; flex-shrink: 0;
+}
+
+/* pagination gap fallback (in case flex gap is unsupported by markup) */
+.dt-paging .dt-paging-button { margin: 0 2px; }
+.dt-paging .dt-paging-button:first-child { margin-left: 0; }
+.dt-paging .dt-paging-button:last-child { margin-right: 0; }
+
+/* ============================================================
+   DataTables 2.x theme (plain CSS, never purged)
+   Colors: light + .dark ; brand gold #f4c20d
+   ============================================================ */
+.dt-container { font-size: 13px; color: #1a1c1e; }
+.dark .dt-container { color: #e5e7eb; }
+
+.dt-container .dt-layout-row {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 12px;
+}
+.dt-container .dt-layout-row:last-child { margin-bottom: 0; margin-top: 14px; }
+.dt-container .dt-layout-cell { display: flex; align-items: center; gap: 8px; }
+.dt-container .dt-layout-cell.dt-layout-end { margin-left: auto; justify-content: flex-end; }
+.dt-container .dt-layout-full { flex: 1 1 100%; }
+
+/* ---- Toolbar buttons (Columns / Export) ---- */
+.dt-buttons { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+button.dt-button, div.dt-button, a.dt-button, .dt-buttons .dt-button {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0 12px;
+  height: 34px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #374151;
+  display: inline-flex; align-items: center; gap: 5px;
+  transition: background .12s ease, border-color .12s ease;
+  cursor: pointer;
+}
+button.dt-button:hover, .dt-buttons .dt-button:hover { background: #f9fafb; border-color: #d1d5db; }
+.dt-button .dt-button-down-arrow { font-size: 10px; margin-left: 3px; color: #9ca3af; opacity: 1; }
+.dark .dt-button .dt-button-down-arrow { color: #9ca3af; }
+.dark button.dt-button, .dark .dt-buttons .dt-button {
+  background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.10); color: #d1d5db;
+}
+.dark button.dt-button:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); }
+
+/* ---- Button collection popup (Export list / Columns colvis) ---- */
+div.dt-button-collection {
+  position: absolute;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px -12px rgba(0,0,0,.25), 0 2px 6px rgba(0,0,0,.06);
+  padding: 4px;
+  min-width: 180px;
+  z-index: 2002;
+}
+div.dt-button-background {
+  position: fixed;
+  inset: 0;
+  z-index: 2001;
+  background: transparent;
+}
+.dt-button-collection .dt-button {
+  display: flex; width: 100%; height: auto; min-height: 34px;
+  background: transparent; border: 0; border-radius: 6px;
+  padding: 7px 10px; justify-content: flex-start; font-weight: 400;
+}
+.dt-button-collection .dt-button:hover { background: #f9fafb; }
+.dt-button-collection .dt-button.dt-button-active { background: #fdf9ec; color: #7d5a11; }
+.dt-button-collection .dt-button.dt-button-active::before {
+  content: "\ea5e"; font-family: "tabler-icons"; margin-right: 6px; color: #c69408;
+}
+.dark .dt-button-collection {
+  background: #202427; border-color: rgba(255,255,255,.10);
+  box-shadow: 0 10px 30px -12px rgba(0,0,0,.6);
+}
+.dark .dt-button-collection .dt-button:hover { background: rgba(255,255,255,.06); }
+.dark .dt-button-collection .dt-button.dt-button-active { background: rgba(244,194,13,.12); color: #f4c20d; }
+
+/* ---- Search + length ---- */
+.dt-search { display: inline-flex; align-items: center; gap: 6px; }
+.dt-search label { font-size: 12.5px; color: #6b7280; }
+.dt-search input.dt-input,
+.dt-length select.dt-input {
+  height: 34px; border: 1px solid #e5e7eb; border-radius: 8px;
+  padding: 0 12px; font-size: 13px; background: #fff; color: #1a1c1e; outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.dt-search input.dt-input { min-width: 220px; }
+.dt-search input.dt-input::placeholder { color: #9ca3af; }
+.dt-search input.dt-input:focus,
+.dt-length select.dt-input:focus {
+  border-color: #f4c20d; box-shadow: 0 0 0 2px rgba(244,194,13,.35);
+}
+.dt-length { display: inline-flex; align-items: center; gap: 8px; }
+.dt-length label { font-size: 12.5px; color: #6b7280; }
+.dt-length select.dt-input { padding-right: 28px; }
+.dark .dt-search label, .dark .dt-length label { color: #9ca3af; }
+.dark .dt-search input.dt-input, .dark .dt-length select.dt-input {
+  background: rgba(255,255,255,.03); border-color: rgba(255,255,255,.10); color: #e5e7eb;
+}
+
+/* ---- Table ---- */
+table.dataTable { width: 100% !important; border-collapse: separate; border-spacing: 0; margin: 0; }
+table.dataTable thead th, table.dataTable thead td {
+  text-align: left; font-weight: 500; font-size: 12px; color: #6b7280;
+  padding: 10px 12px; border-bottom: 1px solid #eef0f2; background: transparent; white-space: nowrap;
+}
+table.dataTable tbody td {
+  padding: 12px; font-size: 13px; color: #1a1c1e;
+  border-bottom: 1px solid #f4f5f6; vertical-align: middle;
+}
+table.dataTable tbody tr { transition: background .12s ease; }
+table.dataTable tbody tr:hover > * { background: #fafafa; }
+table.dataTable tbody tr:last-child td { border-bottom: 0; }
+.dark table.dataTable thead th { color: #9ca3af; border-bottom-color: rgba(255,255,255,.08); }
+.dark table.dataTable tbody td { color: #e5e7eb; border-bottom-color: rgba(255,255,255,.05); }
+.dark table.dataTable tbody tr:hover > * { background: rgba(255,255,255,.03); }
+
+/* ---- Sorting indicators (native span.dt-column-order, active tinted gold) ---- */
+table.dataTable thead th.dt-orderable-asc,
+table.dataTable thead th.dt-orderable-desc { cursor: pointer; }
+table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order:before,
+table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order:after { color: #f4c20d; opacity: 1; }
+
+/* ---- Empty / info / processing ---- */
+table.dataTable td.dt-empty, table.dataTable .dt-empty {
+  text-align: center; color: #9ca3af; padding: 36px 12px;
+}
+.dt-info { color: #6b7280; font-size: 12.5px; }
+.dark .dt-info { color: #9ca3af; }
+div.dt-processing {
+  border: 1px solid #e5e7eb; border-radius: 10px; background: #fff;
+  box-shadow: 0 8px 24px -10px rgba(0,0,0,.2); color: #374151; font-size: 13px;
+  padding: 10px 16px;
+}
+div.dt-processing div, div.dt-processing div div { display: none; }
+.dark div.dt-processing { background: #202427; border-color: rgba(255,255,255,.10); color: #d1d5db; }
+
+/* ---- Pagination ---- */
+.dt-paging { display: inline-flex; gap: 4px; }
+.dt-paging .dt-paging-button {
+  min-width: 32px; height: 32px; padding: 0 8px;
+  border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; color: #374151;
+  font-size: 12.5px; display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .12s ease;
+}
+.dt-paging .dt-paging-button:hover:not(.disabled):not(.current) { background: #f9fafb; }
+.dt-paging .dt-paging-button.current {
+  background: #f4c20d; border-color: #f4c20d; color: #1a1c1e; font-weight: 500;
+}
+.dt-paging .dt-paging-button.disabled { opacity: .4; cursor: default; }
+.dark .dt-paging .dt-paging-button {
+  background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.10); color: #d1d5db;
+}
+.dark .dt-paging .dt-paging-button:hover:not(.disabled):not(.current) { background: rgba(255,255,255,.08); }
+.dark .dt-paging .dt-paging-button.current { background: #f4c20d; border-color: #f4c20d; color: #1a1c1e; }
+
+/* ---- scrollX wrapper ---- */
+.dt-scroll-head table.dataTable { margin-bottom: 0 !important; }
+.dt-scroll-body { border-bottom: 0; }
+
+/* ---- Child (expand) rows ---- */
+table.dataTable tbody tr.child td { background: #fafbfc; }
+.dark table.dataTable tbody tr.child td { background: rgba(255,255,255,.02); }
+table.dataTable td.dt-control { cursor: pointer; }

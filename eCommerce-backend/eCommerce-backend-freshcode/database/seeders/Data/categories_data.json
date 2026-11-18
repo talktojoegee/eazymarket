@@ -1,0 +1,94 @@
+[
+    {
+        "title": "Clothing",
+        "description": "Clothing category",
+        "status": "active",
+        "requires_approval": false,
+        "children": [
+            { "title": "Men's Clothing", "description": "Men's clothing items", "status": "active" },
+            { "title": "Women's Clothing", "description": "Women's clothing items", "status": "active" },
+            { "title": "Kids' Clothing", "description": "Kids' clothing items", "status": "active" },
+            { "title": "Activewear & Sportswear", "description": "Gym tops, leggings, sports bras", "status": "active" },
+            { "title": "Traditional & Ethnic Wear", "description": "Sarees, kurtas, sherwanis", "status": "active" }
+        ]
+    },
+    {
+        "title": "Shoes",
+        "description": "Shoes category",
+        "status": "active",
+        "requires_approval": false,
+        "children": [
+            { "title": "Men's Shoes", "description": "Men's footwear", "status": "active" },
+            { "title": "Women's Shoes", "description": "Women's footwear", "status": "active" },
+            { "title": "Kids' Shoes", "description": "Kids' footwear", "status": "active" },
+            { "title": "Athletic & Running Shoes", "description": "Running, training shoes", "status": "active" },
+            { "title": "Casual Sneakers", "description": "Lifestyle sneakers, slip-ons", "status": "active" }
+        ]
+    },
+    {
+        "title": "Food & Beverages",
+        "description": "Food and drinks category",
+        "status": "active",
+        "requires_approval": false,
+        "children": [
+            { "title": "Grocery Staples", "description": "Rice, oil, spices", "status": "active" },
+            { "title": "Snacks & Beverages", "description": "Chips, soft drinks, tea, coffee", "status": "active" },
+            { "title": "Bakery & Dairy", "description": "Bread, milk, cheese, eggs", "status": "active" },
+            { "title": "Organic & Health Foods", "description": "Gluten‑free, vegan, keto", "status": "active" },
+            { "title": "Frozen Foods", "description": "Vegetables, meats, ice cream", "status": "active" }
+        ]
+    },
+    {
+        "title": "Cosmetics & Body Care",
+        "description": "Beauty and body care category",
+        "status": "active",
+        "requires_approval": false,
+        "children": [
+            { "title": "Makeup", "description": "Foundation, lipstick, mascara", "status": "active" },
+            { "title": "Skin & Hair Care", "description": "Moisturisers, shampoos, serums", "status": "active" },
+            { "title": "Fragrances & Deodorants", "description": "Perfumes, body mists", "status": "active" },
+            { "title": "Men's Grooming", "description": "Beard oil, trimmers, shaving", "status": "active" },
+            { "title": "Bath & Body", "description": "Shower gels, body lotions", "status": "active" }
+        ]
+    },
+    {
+        "title": "Accessories",
+        "description": "Accessories category",
+        "status": "active",
+        "requires_approval": false,
+        "children": [
+            { "title": "Bags & Wallets", "description": "Backpacks, handbags, wallets", "status": "active" },
+            { "title": "Watches & Jewelry", "description": "Wristwatches, necklaces, rings", "status": "active" },
+            { "title": "Sunglasses & Tech Accessories", "description": "Sunglasses, phone cases", "status": "active" },
+            { "title": "Hats & Caps", "description": "Baseball caps, beanies", "status": "active" },
+            { "title": "Luggage & Travel Gear", "description": "Suitcases, duffel bags", "status": "active" }
+        ]
+    },
+    {
+        "title": "Electronics",
+        "description": "Electronic devices category",
+        "status": "active",
+        "requires_approval": false,
+        "children": [
+            { "title": "Mobile & Accessories", "description": "Smartphones, chargers, cases", "status": "active" },
+            { "title": "Computers & Audio", "description": "Laptops, headphones, speakers", "status": "active" },
+            { "title": "Small Home Appliances", "description": "Air fryers, blenders", "status": "active" },
+            { "title": "Gaming Consoles & Accessories", "description": "PS5, Xbox, Nintendo", "status": "active" },
+            { "title": "Smart Home Devices", "description": "Smart speakers, cameras, plugs", "status": "active" }
+        ]
+    },
+    {
+        "title": "Drugstore & Health Products",
+        "description": "Health and personal care category",
+        "status": "active",
+        "requires_approval": false,
+        "children": [
+            { "title": "OTC Medicines & First Aid", "description": "Pain relievers, bandages", "status": "active" },
+            { "title": "Vitamins & Supplements", "description": "Multivitamins, protein powders", "status": "active" },
+            { "title": "Personal & Baby Care", "description": "Diapers, feminine hygiene", "status": "active" },
+            { "title": "Dental Care", "description": "Toothbrushes, toothpaste", "status": "active" }
+        ]
+    },
+    { "title": "Breakfast & Cereals", "description": "Oats, granola, cereal, muesli", "status": "active" },
+    { "title": "Furniture", "description": "Furniture category", "status": "active", "requires_approval": false }
+]

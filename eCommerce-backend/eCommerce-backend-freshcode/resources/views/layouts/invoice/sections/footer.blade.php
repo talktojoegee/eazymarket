@@ -1,0 +1,1 @@
+<footer class="invoice-footer" data-invoice-section="footer" style="{{ $sectionStyle('footer') }}"><span>{{ $invoiceConfig['footer'] ?? '' }}</span><span>{{ $order['order_number'] ?? $order['id'] }} · {{ $appName }}</span></footer>

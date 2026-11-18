@@ -1,0 +1,33 @@
+.scroll-sort-enabled {
+    cursor: grab;
+    touch-action: pan-x pan-y;
+}
+
+.scroll-sort-enabled.is-scroll-sorting,
+.scroll-sort-enabled.is-scroll-dragging {
+    cursor: grabbing;
+    scroll-behavior: auto !important;
+    scroll-snap-type: none !important;
+    user-select: none;
+}
+
+.scroll-sort-enabled > * {
+    transition: box-shadow .18s ease, opacity .18s ease, transform .18s ease;
+}
+
+.scroll-sort-enabled .scroll-sort-chosen {
+    position: relative;
+    z-index: 30;
+    box-shadow: 0 .7rem 1.5rem rgba(15, 23, 42, .24);
+    transform: translateY(-.28rem) scale(1.035);
+}
+
+.scroll-sort-enabled .scroll-sort-ghost {
+    opacity: .28;
+}
+
+.scroll-sort-enabled .scroll-sort-drag {
+    cursor: grabbing;
+    box-shadow: 0 .85rem 1.8rem rgba(15, 23, 42, .28);
+    transform: scale(1.035);
+}

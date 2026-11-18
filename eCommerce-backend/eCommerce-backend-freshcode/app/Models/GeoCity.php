@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class GeoCity extends Model
+{
+    protected $table = 'geo_cities';
+
+    protected $fillable = [
+        'country_iso2',
+        'state_code',
+        'name',
+    ];
+}

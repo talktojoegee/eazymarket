@@ -1,0 +1,43 @@
+# Robots.txt for Hyper Local E-commerce Platform
+
+User-agent: *
+Allow: /
+
+# Block private / non-SEO pages
+Disallow: /api/
+Disallow: /my-account/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /shopping-list/
+Disallow: /forgot-password/
+Disallow: /admin/
+
+# Block the design sandbox — mock data, not catalogue content
+Disallow: /redesign/
+Disallow: /design-system/
+
+# Allow Next.js public assets (IMPORTANT: Allow before blocking)
+Allow: /_next/image
+Allow: /images/
+Allow: /logos/
+Allow: /locales/
+Allow: /sitemap.xml
+Allow: /sitemaps/
+Allow: /feeds/
+Allow: /robots.txt
+
+# Block aggressive crawlers
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://hypercommerce-web.eshopweb.store/sitemap.xml

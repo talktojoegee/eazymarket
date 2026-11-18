@@ -1,0 +1,284 @@
+.payment-settings-sidebar {
+    top: 1rem;
+}
+
+.payment-settings-sidebar-title {
+    margin-bottom: .75rem;
+    color: var(--tblr-secondary-color);
+    font-size: .6875rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.payment-settings-nav {
+    gap: .35rem;
+}
+
+.payment-settings-nav .nav-link {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: .65rem;
+    min-height: 2.75rem;
+    padding: .4rem .6rem;
+    border-radius: .65rem;
+    color: var(--tblr-body-color);
+}
+
+.payment-settings-nav .nav-link:hover,
+.payment-settings-nav .nav-link.active {
+    background: var(--tblr-primary-lt);
+    color: var(--tblr-primary);
+}
+
+.payment-nav-logo,
+.payment-overview-logo,
+.payment-gateway-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--tblr-border-color);
+}
+
+.payment-nav-logo {
+    width: 2rem;
+    height: 2rem;
+    border-radius: .55rem;
+}
+
+.payment-nav-logo img,
+.payment-overview-logo img,
+.payment-gateway-logo img {
+    width: 76%;
+    height: 76%;
+    object-fit: contain;
+}
+
+.payment-nav-logo i,
+.payment-overview-logo i,
+.payment-gateway-logo i {
+    color: var(--tblr-primary);
+    font-size: 1.25rem;
+}
+
+.payment-nav-name {
+    overflow: hidden;
+    font-size: .8125rem;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.payment-status-dot {
+    width: .5rem;
+    height: .5rem;
+    border-radius: 999px;
+    background: var(--tblr-secondary-color);
+    opacity: .45;
+}
+
+.payment-status-dot.is-enabled {
+    background: var(--tblr-success);
+    box-shadow: 0 0 0 3px rgba(var(--tblr-success-rgb), .12);
+    opacity: 1;
+}
+
+.payment-settings-overview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.25rem;
+    border: 1px solid rgba(var(--tblr-primary-rgb), .16);
+    border-radius: .85rem;
+    background: linear-gradient(135deg, rgba(var(--tblr-primary-rgb), .1), rgba(var(--tblr-info-rgb), .04));
+}
+
+.payment-settings-overview > div:first-child,
+.payment-settings-overview-logos,
+.payment-gateway-identity {
+    display: flex;
+    align-items: center;
+}
+
+.payment-settings-overview > div:first-child {
+    gap: .9rem;
+}
+
+.payment-settings-overview-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: .75rem;
+    background: var(--tblr-primary);
+    color: #fff;
+    font-size: 1.5rem;
+    box-shadow: 0 .5rem 1.25rem rgba(var(--tblr-primary-rgb), .2);
+}
+
+.payment-settings-overview h3 {
+    margin: 0 0 .2rem;
+    font-size: 1rem;
+}
+
+.payment-settings-overview p {
+    margin: 0;
+    color: var(--tblr-secondary-color);
+    font-size: .8125rem;
+}
+
+.payment-settings-overview-logos {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: .4rem;
+}
+
+.payment-overview-logo {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: .6rem;
+    filter: grayscale(1);
+    opacity: .48;
+    transition: filter .2s ease, opacity .2s ease, transform .2s ease;
+}
+
+.payment-overview-logo.is-enabled {
+    filter: none;
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.payment-gateway-card {
+    overflow: hidden;
+    border-color: var(--tblr-border-color);
+    border-radius: .85rem;
+    transition: border-color .2s ease, box-shadow .2s ease;
+    scroll-margin-top: 1rem;
+}
+
+.payment-gateway-card.is-enabled {
+    border-color: rgba(var(--tblr-success-rgb), .38);
+    box-shadow: 0 .35rem 1.25rem rgba(31, 41, 55, .06);
+}
+
+.payment-gateway-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 5rem;
+    padding: .9rem 1.15rem;
+    background: var(--tblr-bg-surface-secondary);
+}
+
+.payment-gateway-identity {
+    min-width: 0;
+    gap: .85rem;
+}
+
+.payment-gateway-logo {
+    flex: 0 0 auto;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: .8rem;
+    box-shadow: 0 .25rem .75rem rgba(31, 41, 55, .06);
+}
+
+.payment-gateway-logo i {
+    font-size: 1.65rem;
+}
+
+.payment-gateway-card-header .card-title {
+    margin: 0 0 .25rem;
+    font-size: .95rem;
+    font-weight: 700;
+}
+
+.payment-gateway-mode {
+    display: inline-flex;
+    align-items: center;
+    padding: .12rem .45rem;
+    border-radius: 999px;
+    background: var(--tblr-azure-lt);
+    color: var(--tblr-azure);
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.payment-gateway-status {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .35rem .6rem;
+    border-radius: 999px;
+    background: var(--tblr-secondary-lt);
+    color: var(--tblr-secondary);
+    font-size: .7rem;
+}
+
+.payment-gateway-status > span {
+    width: .45rem;
+    height: .45rem;
+    border-radius: 999px;
+    background: currentColor;
+}
+
+.payment-gateway-status.is-enabled {
+    background: var(--tblr-success-lt);
+    color: var(--tblr-success);
+}
+
+.payment-gateway-card > .card-body {
+    padding: 1.15rem;
+}
+
+.payment-gateway-card > .card-body > .mb-3:first-child {
+    margin: -.15rem 0 1rem !important;
+    padding: .75rem .85rem;
+    border: 1px solid var(--tblr-border-color);
+    border-radius: .65rem;
+    background: var(--tblr-bg-surface-secondary);
+}
+
+.payment-gateway-card .form-label {
+    font-weight: 600;
+}
+
+.payment-gateway-card .form-control,
+.payment-gateway-card .form-select {
+    border-radius: .55rem;
+}
+
+.payment-settings-save-bar {
+    position: sticky;
+    z-index: 10;
+    bottom: .75rem;
+    margin-top: 1rem;
+    border-radius: .75rem;
+}
+
+@media (max-width: 767.98px) {
+    .payment-settings-overview {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .payment-settings-overview-logos {
+        justify-content: flex-start;
+    }
+
+    .payment-gateway-card-header {
+        align-items: flex-start;
+    }
+
+    .payment-gateway-status {
+        padding: .3rem .45rem;
+    }
+}

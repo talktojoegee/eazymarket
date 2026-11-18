@@ -1,0 +1,477 @@
+.watch-buy-status-profile-ring {
+    display: inline-flex;
+    padding: 3px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--tblr-primary), #f76707);
+}
+
+.watch-buy-status-profile-ring .avatar {
+    border: 3px solid var(--tblr-bg-surface);
+}
+
+.watch-buy-status-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.watch-buy-status-toolbar-actions,
+.watch-buy-status-search {
+    display: flex;
+    gap: .5rem;
+}
+
+.watch-buy-status-profile-group {
+    overflow: hidden;
+    border: 1px solid var(--tblr-border-color);
+    border-radius: var(--tblr-border-radius-lg);
+    background: var(--tblr-bg-surface);
+    box-shadow: var(--tblr-shadow-card);
+}
+
+.watch-buy-status-profile-group-embedded {
+    margin-bottom: 0 !important;
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.watch-buy-status-profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--tblr-border-color);
+}
+
+.watch-buy-status-gallery {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    scrollbar-color: var(--tblr-border-color) transparent;
+    scrollbar-width: thin;
+}
+
+.watch-buy-status-profile-group-embedded .watch-buy-status-gallery {
+    padding: 0;
+}
+
+.watch-buy-status-gallery::-webkit-scrollbar {
+    height: 7px;
+}
+
+.watch-buy-status-gallery::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: var(--tblr-border-color);
+}
+
+.watch-buy-status-card {
+    flex: 0 0 190px;
+    overflow: hidden;
+    border: 1px solid var(--tblr-border-color);
+    border-radius: 1rem;
+    background: var(--tblr-bg-surface);
+    box-shadow: 0 4px 18px rgba(31, 41, 55, .08);
+    scroll-snap-align: start;
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.watch-buy-status-card:hover {
+    border-color: color-mix(in srgb, var(--tblr-primary) 45%, var(--tblr-border-color));
+    box-shadow: 0 10px 28px rgba(31, 41, 55, .14);
+    transform: translateY(-2px);
+}
+
+.watch-buy-status-card-media {
+    position: relative;
+    display: flex;
+    aspect-ratio: 9 / 13;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #111827;
+    color: #fff;
+}
+
+.watch-buy-status-card-media > img,
+.watch-buy-status-card-media > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.watch-buy-status-theme-0,
+.watch-buy-status-theme-1,
+.watch-buy-status-theme-2,
+.watch-buy-status-theme-3 {
+    background: linear-gradient(to bottom right, #833ab4, #fd1d1d, #fcb045);
+}
+
+.watch-buy-status-text-only {
+    position: relative;
+    z-index: 1;
+    display: -webkit-box;
+    max-height: 11.5rem;
+    padding: 1.25rem;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.55;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.watch-buy-status-media-unavailable,
+.watch-buy-status-preview-unavailable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .75rem;
+    color: #94a3b8;
+}
+
+.watch-buy-status-media-unavailable i,
+.watch-buy-status-preview-unavailable i {
+    font-size: 2.5rem;
+}
+
+.watch-buy-status-preview-trigger {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    color: #fff;
+}
+
+.watch-buy-status-preview-trigger > span {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .5rem .75rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, .78);
+    font-size: .8rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.watch-buy-status-preview-trigger:hover {
+    background: rgba(15, 23, 42, .25);
+}
+
+.watch-buy-status-preview-trigger:hover > span,
+.watch-buy-status-preview-trigger:focus-visible > span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.watch-buy-status-preview-trigger:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, .9);
+    outline-offset: -5px;
+}
+
+.watch-buy-status-card-topbar {
+    position: absolute;
+    z-index: 4;
+    top: .6rem;
+    right: .6rem;
+    left: .6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    pointer-events: none;
+}
+
+.watch-buy-status-card-topbar > * {
+    pointer-events: auto;
+}
+
+.watch-buy-status-card-topbar .badge {
+    color: #fff !important;
+    background: rgba(15, 23, 42, .72) !important;
+    backdrop-filter: blur(6px);
+}
+
+.watch-buy-status-card-topbar .btn {
+    border: 0;
+    background: rgba(15, 23, 42, .72);
+    backdrop-filter: blur(6px);
+}
+
+.watch-buy-status-play-icon {
+    position: absolute;
+    z-index: 1;
+    display: grid;
+    width: 3.25rem;
+    height: 3.25rem;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, .55);
+    border-radius: 50%;
+    background: rgba(15, 23, 42, .55);
+    font-size: 1.5rem;
+    backdrop-filter: blur(5px);
+}
+
+.watch-buy-status-card-expiry {
+    position: absolute;
+    z-index: 3;
+    right: .65rem;
+    bottom: .65rem;
+    left: .65rem;
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    padding: .45rem .6rem;
+    border-radius: .5rem;
+    background: rgba(15, 23, 42, .78);
+    font-size: .72rem;
+    font-weight: 600;
+    pointer-events: none;
+    backdrop-filter: blur(6px);
+}
+
+.watch-buy-status-card-summary {
+    padding: .8rem;
+}
+
+.watch-buy-status-card-text {
+    display: -webkit-box;
+    margin-bottom: .45rem;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: .82rem;
+    font-weight: 600;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.watch-buy-status-products {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .7rem;
+    padding-top: .7rem;
+    border-top: 1px solid var(--tblr-border-color);
+    color: var(--tblr-secondary);
+    font-size: .75rem;
+}
+
+.watch-buy-status-inline-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    min-height: 8rem;
+    color: var(--tblr-secondary);
+}
+
+.watch-buy-status-preview-layout {
+    min-height: 620px;
+}
+
+.watch-buy-status-preview-modal .modal-body {
+    overflow-x: hidden;
+}
+
+.watch-buy-status-preview-stage {
+    display: flex;
+    min-height: 620px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #080c14;
+    color: #fff;
+}
+
+.watch-buy-status-preview-stage img,
+.watch-buy-status-preview-stage video {
+    width: 100%;
+    height: 620px;
+    object-fit: contain;
+    background: #080c14;
+}
+
+.watch-buy-status-preview-text-only {
+    display: flex;
+    width: 100%;
+    min-height: 620px;
+    align-items: center;
+    justify-content: center;
+    max-width: 42rem;
+    padding: 3rem;
+    background: linear-gradient(to bottom right, #833ab4, #fd1d1d, #fcb045);
+    font-size: clamp(1.4rem, 3vw, 2.25rem);
+    font-weight: 650;
+    line-height: 1.45;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.watch-buy-status-preview-details {
+    display: flex;
+    min-width: 0;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+    overflow: hidden;
+    background: var(--tblr-bg-surface);
+}
+
+.watch-buy-status-preview-copy {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.watch-buy-status-preview-meta {
+    display: grid;
+    gap: 1rem;
+}
+
+.watch-buy-status-preview-meta > div {
+    display: flex;
+    min-width: 0;
+    align-items: flex-start;
+    gap: .75rem;
+    color: var(--tblr-secondary);
+}
+
+.watch-buy-status-preview-meta i {
+    margin-top: .1rem;
+    font-size: 1.15rem;
+    color: var(--tblr-primary);
+}
+
+.watch-buy-status-preview-product-list {
+    display: grid;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    gap: .5rem;
+}
+
+.watch-buy-status-preview-products-wrap {
+    flex: 1 1 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.watch-buy-status-preview-product {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    align-items: center;
+    gap: .65rem;
+    padding: .5rem;
+    border: 1px solid var(--tblr-border-color);
+    border-radius: .6rem;
+    background: var(--tblr-bg-surface-secondary);
+    text-decoration: none;
+    transition: border-color .15s ease, background-color .15s ease;
+}
+
+.watch-buy-status-preview-product .text-truncate {
+    min-width: 0;
+}
+
+.watch-buy-status-preview-product:hover {
+    border-color: color-mix(in srgb, var(--tblr-primary) 45%, var(--tblr-border-color));
+    background: color-mix(in srgb, var(--tblr-primary) 7%, var(--tblr-bg-surface));
+}
+
+.watch-buy-status-preview-product-image {
+    flex: 0 0 auto;
+    object-fit: cover;
+}
+
+.watch-buy-status-preview-product > i {
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.watch-buy-status-preview-actions {
+    display: grid;
+    gap: .75rem;
+}
+
+@media (hover: none) {
+    .watch-buy-status-preview-trigger > span {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .watch-buy-status-preview-layout,
+    .watch-buy-status-preview-stage {
+        min-height: auto;
+    }
+
+    .watch-buy-status-preview-stage,
+    .watch-buy-status-preview-stage img,
+    .watch-buy-status-preview-stage video,
+    .watch-buy-status-preview-text-only {
+        height: min(56vh, 520px);
+        min-height: min(56vh, 520px);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .watch-buy-status-toolbar,
+    .watch-buy-status-toolbar-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .watch-buy-status-toolbar-actions,
+    .watch-buy-status-search,
+    .watch-buy-status-toolbar-actions > .btn {
+        width: 100%;
+    }
+
+    .watch-buy-status-search .form-control {
+        min-width: 0;
+    }
+
+    .watch-buy-status-profile-header {
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .watch-buy-status-gallery {
+        gap: .75rem;
+        padding: 1rem;
+    }
+
+    .watch-buy-status-profile-group-embedded .watch-buy-status-gallery {
+        padding: 0;
+    }
+
+    .watch-buy-status-card {
+        flex-basis: 164px;
+    }
+
+    .watch-buy-status-preview-details {
+        padding: 1.25rem;
+    }
+}

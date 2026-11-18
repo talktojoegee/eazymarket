@@ -1,0 +1,132 @@
+<?php
+
+namespace App\Notifications;
+
+use App\Broadcasting\FirebaseChannel;
+use App\Enums\Notification\NotificationRoleTypeEnum;
+use App\Enums\NotificationTypeEnum;
+use App\Events\Product\ProductAfterUpdate;
+use App\Notifications\Channels\RoleAwareDatabaseChannel;
+use App\Notifications\Concerns\RespectsChannelSettings;
+use App\Services\CurrencyService;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
+
+class ProductUpdated extends Notification implements ShouldQueue
+{
+    use Queueable;
+    use RespectsChannelSettings;
+
+    protected $event;
+
+    /**
+     * Create a new notification instance.
+     */
+    public function __construct(ProductAfterUpdate $event)
+    {
+        $this->event = $event;
+    }
+
+    /**
+     * Get the notification's delivery channels.
+     *
+     * @return array<int, string>
+     */
+    public function via(object $notifiable): array
+    {
+        $channels = [RoleAwareDatabaseChannel::class, FirebaseChannel::class];
+
+        if (! empty($notifiable->email)) {
+            $channels[] = 'mail';
+        }
+
+        return $this->filterChannels($channels);
+    }
+
+    /**
+     * Get the mail representation of the notification.
+     */
+    public function toMail(object $notifiable): MailMessage
+    {
+        $product = $this->event->product;
+
+        return (new MailMessage)
+            ->subject('Product Resubmitted for Approval - '.$product->title)
+            ->greeting('Hello '.$notifiable->name.'!')
+            ->line('A seller updated a product awaiting approval.')
+            ->line('Product: '.$product->title)
+            ->line('Description: '.$product->short_description)
+            ->line('Price: '.app(CurrencyService::class)->getSymbol().number_format($product->price ?? 0, 2))
+            ->line('Status: '.$product->status)
+            ->action('Review Product', route('admin.products.show', $product->id))
+            ->line('Thank you for using our application!');
+    }
+
+    public function toFirebase(object $notifiable): array
+    {
+        $product = $this->event->product;
+
+        return [
+            'title' => 'Product Resubmitted for Approval',
+            'body' => 'A seller updated "'.$product->title.'" for approval.',
+            'image' => $product->main_image ?? null,
+            'data' => [
+                'product_id' => $product->id,
+                'type' => NotificationTypeEnum::PRODUCT(),
+                'role_type' => NotificationRoleTypeEnum::ADMIN(),
+                'click_action' => route('admin.products.show', $product->id),
+            ],
+        ];
+    }
+
+    /**
+     * Get the array representation of the notification.
+     *
+     * @return array<string, mixed>
+     */
+    public function toArray(object $notifiable): array
+    {
+        $product = $this->event->product;
+
+        return [
+            'product_id' => $product->id,
+            'title' => 'Product Resubmitted for Approval',
+            'message' => 'A seller updated "'.$product->title.'" for approval.',
+            'type' => 'product_updated',
+            'metadata' => [
+                'product_title' => $product->title,
+                'product_price' => $product->price,
+                'product_status' => $product->status,
+                'seller_id' => $product->seller_id,
+            ],
+        ];
+    }
+
+    /**
+     * Get the database representation of the notification.
+     */
+    public function toDatabase(object $notifiable): array
+    {
+        $product = $this->event->product;
+
+        return [
+            'title' => 'Product Resubmitted for Approval',
+            'message' => 'A seller updated "'.$product->title.'" for approval.',
+            'type' => NotificationTypeEnum::PRODUCT,
+            'sent_to' => 'admin',
+            'role_type' => NotificationRoleTypeEnum::ADMIN(),
+            'user_id' => $notifiable->id,
+            'store_id' => $product->seller_id,
+            'order_id' => null,
+            'metadata' => [
+                'product_id' => $product->id,
+                'product_title' => $product->title,
+                'product_price' => $product->price,
+                'product_status' => $product->status,
+                'seller_id' => $product->seller_id,
+            ],
+        ];
+    }
+}

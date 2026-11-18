@@ -1,0 +1,187 @@
+[
+    {
+        "user": {
+            "email": "seller@gmail.com",
+            "name": "Demo Seller",
+            "mobile": "9000000001",
+            "country_code": "91",
+            "password": "12345678"
+        },
+        "seller": {
+            "address": "221B Market Street",
+            "city": "San Francisco",
+            "landmark": "Near Union Square",
+            "state": "California",
+            "zipcode": "94102",
+            "country": "United States",
+            "country_code": "1",
+            "latitude": 37.774929,
+            "longitude": -122.419416,
+            "bank_name": "Demo Bank",
+            "bank_branch_code": "BR01",
+            "account_holder_name": "Demo Seller",
+            "account_number": "000123456789",
+            "routing_number": "110000000",
+            "bank_account_type": "checking"
+        },
+        "store": {
+            "name": "Demo Storefront",
+            "contact_email": "seller@gmail.com",
+            "contact_number": "+14155550100",
+            "description": "A demo storefront for local testing.",
+            "tax_name": "GST",
+            "tax_number": "GST00012345",
+            "currency_code": "USD",
+            "promotional_text": "Welcome to the demo store!",
+            "about_us": "This store exists purely for development and QA."
+        }
+    },
+    {
+        "user": {
+            "email": "seller2@gmail.com",
+            "name": "Fashion Hub Seller",
+            "mobile": "9000000002",
+            "country_code": "91",
+            "password": "12345678"
+        },
+        "seller": {
+            "address": "45 Fashion Avenue",
+            "city": "New York",
+            "landmark": "Near Times Square",
+            "state": "New York",
+            "zipcode": "10001",
+            "country": "United States",
+            "country_code": "1",
+            "latitude": 40.712776,
+            "longitude": -74.005974,
+            "bank_name": "Chase Bank",
+            "bank_branch_code": "CH001",
+            "account_holder_name": "Fashion Hub",
+            "account_number": "987654321",
+            "routing_number": "021000021",
+            "bank_account_type": "business"
+        },
+        "store": {
+            "name": "Fashion Hub Store",
+            "contact_email": "seller2@gmail.com",
+            "contact_number": "+12125550123",
+            "description": "Trendy clothing and accessories",
+            "tax_name": "Sales Tax",
+            "tax_number": "ST123456",
+            "currency_code": "USD",
+            "promotional_text": "Get the latest fashion!",
+            "about_us": "We bring you the best styles from around the world."
+        }
+    },
+    {
+        "user": {
+            "email": "seller3@gmail.com",
+            "name": "Electronics Pro Seller",
+            "mobile": "9000000003",
+            "country_code": "91",
+            "password": "12345678"
+        },
+        "seller": {
+            "address": "123 Tech Park",
+            "city": "Austin",
+            "landmark": "Near Dell Campus",
+            "state": "Texas",
+            "zipcode": "78701",
+            "country": "United States",
+            "country_code": "1",
+            "latitude": 30.267153,
+            "longitude": -97.743061,
+            "bank_name": "Wells Fargo",
+            "bank_branch_code": "WF789",
+            "account_holder_name": "Electronics Pro",
+            "account_number": "555666777",
+            "routing_number": "121000248",
+            "bank_account_type": "checking"
+        },
+        "store": {
+            "name": "Electronics Pro Store",
+            "contact_email": "seller3@gmail.com",
+            "contact_number": "+15125550100",
+            "description": "Latest gadgets and electronics",
+            "tax_name": "VAT",
+            "tax_number": "VAT98765",
+            "currency_code": "USD",
+            "promotional_text": "Tech deals every day!",
+            "about_us": "Your one-stop shop for electronics."
+        }
+    },
+    {
+        "user": {
+            "email": "seller4@gmail.com",
+            "name": "Health & Beauty Seller",
+            "mobile": "9000000004",
+            "country_code": "91",
+            "password": "12345678"
+        },
+        "seller": {
+            "address": "789 Wellness Blvd",
+            "city": "Los Angeles",
+            "landmark": "Near UCLA",
+            "state": "California",
+            "zipcode": "90024",
+            "country": "United States",
+            "country_code": "1",
+            "latitude": 34.052235,
+            "longitude": -118.243683,
+            "bank_name": "Bank of America",
+            "bank_branch_code": "BOA456",
+            "account_holder_name": "Health & Beauty",
+            "account_number": "111222333",
+            "routing_number": "026009593",
+            "bank_account_type": "business"
+        },
+        "store": {
+            "name": "Health & Beauty Store",
+            "contact_email": "seller4@gmail.com",
+            "contact_number": "+13105550123",
+            "description": "Natural health and beauty products",
+            "tax_name": "GST",
+            "tax_number": "GST555444",
+            "currency_code": "USD",
+            "promotional_text": "Glow naturally!",
+            "about_us": "We offer organic and cruelty-free products."
+        }
+    },
+    {
+        "user": {
+            "email": "seller5@gmail.com",
+            "name": "Home & Living Seller",
+            "mobile": "9000000005",
+            "country_code": "91",
+            "password": "12345678"
+        },
+        "seller": {
+            "address": "567 Home Street",
+            "city": "Chicago",
+            "landmark": "Near Magnificent Mile",
+            "state": "Illinois",
+            "zipcode": "60601",
+            "country": "United States",
+            "country_code": "1",
+            "latitude": 41.878113,
+            "longitude": -87.629799,
+            "bank_name": "Citibank",
+            "bank_branch_code": "CIT001",
+            "account_holder_name": "Home & Living",
+            "account_number": "444555666",
+            "routing_number": "271070801",
+            "bank_account_type": "checking"
+        },
+        "store": {
+            "name": "Home & Living Store",
+            "contact_email": "seller5@gmail.com",
+            "contact_number": "+13125550100",
+            "description": "Furniture and home decor",
+            "tax_name": "Sales Tax",
+            "tax_number": "ST789012",
+            "currency_code": "USD",
+            "promotional_text": "Make your home beautiful!",
+            "about_us": "Quality furniture for every room."
+        }
+    }
+]

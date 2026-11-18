@@ -1,0 +1,217 @@
+/* =====================================================================
+   Hypercommerce Knowledge Base — components layered on hypercommerce-docs.css
+   Adds the KB-specific surfaces the setup docs don't have:
+   role badge, definition row, "flow strip", FAQ list, related articles.
+   Everything reuses the existing --tk-* / --hc-accent-* tokens.
+   ===================================================================== */
+
+/* ---- Role badge in the sidebar brand ---- */
+.kb-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 8px;
+  padding: 3px 9px 3px 7px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--hc-accent-fg);
+  background: var(--hc-accent-light);
+  border: 1px solid var(--hc-accent-border);
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+.kb-role svg { width: 13px; height: 13px; }
+
+/* ---- "What it is / Why it matters" definition row ---- */
+.kb-deflist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 18px 0 22px;
+}
+@media (max-width: 720px) { .kb-deflist { grid-template-columns: 1fr; } }
+.kb-def {
+  background: var(--tk-bg-card);
+  border: 1px solid var(--tk-border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,0.03);
+}
+.kb-def .dt {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tk-fg-5);
+  margin-bottom: 7px;
+}
+.kb-def .dt svg { width: 15px; height: 15px; color: var(--hc-accent-fg); }
+.kb-def .dd { font-size: 14px; line-height: 1.55; color: var(--tk-fg-3); margin: 0; }
+.kb-def .dd strong { color: var(--tk-fg-1); font-weight: 600; }
+
+/* ---- Flow strip: a horizontal "A → B → C" process visual ---- */
+.kb-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 10px;
+  margin: 20px 0 24px;
+}
+.kb-flow-step {
+  flex: 1 1 0;
+  min-width: 140px;
+  position: relative;
+  background: var(--tk-bg-card);
+  border: 1px solid var(--tk-border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,0.03);
+}
+.kb-flow-step .fn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  background: var(--hc-accent-light);
+  color: var(--hc-accent-fg);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 9px;
+}
+.kb-flow-step.is-accent { border-color: var(--hc-accent-border); background: var(--hc-accent-soft); }
+.kb-flow-step .ft { font-size: 13.5px; font-weight: 600; color: var(--tk-fg-1); line-height: 1.3; margin-bottom: 3px; }
+.kb-flow-step .fd { font-size: 12px; color: var(--tk-fg-4); line-height: 1.4; }
+.kb-flow-step::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-top: 1.6px solid var(--tk-border-strong);
+  border-right: 1.6px solid var(--tk-border-strong);
+  transform: translateY(-50%) rotate(45deg);
+  z-index: 1;
+}
+.kb-flow-step:last-child::after { display: none; }
+@media (max-width: 720px) {
+  .kb-flow { flex-direction: column; }
+  .kb-flow-step::after { right: 50%; top: auto; bottom: -8px; transform: translateX(50%) rotate(135deg); }
+}
+
+/* ---- Status pill row (reuses .doc-pill look but inline list) ---- */
+.kb-statuses { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px; }
+.kb-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--tk-fg-3);
+  background: var(--tk-bg-soft);
+  border: 1px solid var(--tk-border);
+  border-radius: 9999px;
+}
+.kb-stat i { width: 7px; height: 7px; border-radius: 9999px; background: var(--tk-fg-5); }
+.kb-stat.ok i    { background: var(--tk-success); }
+.kb-stat.warn i  { background: var(--tk-warning); }
+.kb-stat.bad i   { background: var(--tk-danger); }
+.kb-stat.info i  { background: var(--tk-primary); }
+.kb-stat.purple i{ background: var(--tk-info); }
+
+/* ---- FAQ list (Common questions) ---- */
+.kb-faq { margin: 14px 0 8px; border: 1px solid var(--tk-border); border-radius: 12px; overflow: hidden; background: var(--tk-bg-card); }
+.kb-faq-item + .kb-faq-item { border-top: 1px solid var(--tk-border); }
+.kb-faq-q {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 15px 18px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tk-fg-1);
+  transition: background 150ms cubic-bezier(0.4,0,0.2,1);
+}
+.kb-faq-q:hover { background: var(--tk-bg-muted); }
+.kb-faq-q .qix {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; height: 24px;
+  border-radius: 7px;
+  background: var(--hc-accent-light);
+  color: var(--hc-accent-fg);
+}
+.kb-faq-q .qix svg { width: 14px; height: 14px; }
+.kb-faq-q .qchev { margin-left: auto; flex: none; color: var(--tk-fg-5); transition: transform 180ms cubic-bezier(0.4,0,0.2,1); }
+.kb-faq-q .qchev svg { width: 16px; height: 16px; display: block; }
+.kb-faq-item.open .qchev { transform: rotate(90deg); }
+.kb-faq-a { display: none; padding: 0 18px 16px 54px; font-size: 13.5px; line-height: 1.6; color: var(--tk-fg-3); }
+.kb-faq-item.open .kb-faq-a { display: block; }
+.kb-faq-a code { font-size: 12.5px; }
+
+/* ---- Related articles ---- */
+.kb-related { margin: 36px 0 8px; }
+.kb-related-h {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--tk-fg-4);
+  margin-bottom: 14px;
+}
+.kb-related-h svg { width: 16px; height: 16px; color: var(--hc-accent-fg); }
+.kb-related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 720px) { .kb-related-grid { grid-template-columns: 1fr; } }
+.kb-rel-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 16px 18px;
+  background: var(--tk-bg-card);
+  border: 1px solid var(--tk-border);
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,0.03);
+  transition: border-color 150ms cubic-bezier(0.4,0,0.2,1), transform 150ms cubic-bezier(0.4,0,0.2,1);
+}
+.kb-rel-card:hover { border-color: var(--hc-accent-border); transform: translateY(-1px); }
+.kb-rel-ic {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: var(--hc-accent-light);
+  color: var(--hc-accent-fg);
+}
+.kb-rel-ic svg { width: 19px; height: 19px; }
+.kb-rel-body { min-width: 0; display: flex; flex-direction: column; }
+.kb-rel-cat { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; color: var(--tk-fg-5); margin-bottom: 4px; }
+.kb-rel-title { display: block; font-size: 14.5px; font-weight: 600; color: var(--tk-fg-1); line-height: 1.3; }
+.kb-rel-desc { display: block; font-size: 12.5px; color: var(--tk-fg-4); line-height: 1.45; margin-top: 4px; }
+.kb-rel-arrow { margin-left: auto; flex: none; color: var(--tk-fg-5); align-self: center; }
+.kb-rel-arrow svg { width: 16px; height: 16px; display: block; }
+
+/* Language switcher (native select) */
+.doc-lang { appearance: auto; -webkit-appearance: auto; background: var(--tk-bg-muted); color: var(--tk-fg-2); border: 1px solid var(--tk-border); border-radius: var(--tk-radius-full); font-size: 12.5px; font-weight: 600; line-height: 1; padding: 6px 10px; margin-right: 6px; cursor: pointer; }
+.doc-lang:hover { background: var(--tk-bg-hover); }
+@media (max-width: 700px) { .doc-lang { display: none !important; } }

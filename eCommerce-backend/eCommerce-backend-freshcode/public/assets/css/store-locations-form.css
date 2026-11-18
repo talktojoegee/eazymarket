@@ -1,0 +1,94 @@
+/*
+ * Store Locations form — make the Google <gmp-place-autocomplete> web component
+ * inherit the same look as Tabler / Bootstrap .form-control inputs used elsewhere
+ * in the form. The element exposes ::part(input) for the inner input so we can
+ * restyle it without poking at the shadow DOM.
+ */
+
+.loc-address-search-host {
+    display: block;
+    width: 100%;
+}
+
+/* The web component itself — let it expand and remove the default outline. */
+.loc-address-search-host gmp-place-autocomplete {
+    display: block;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+/* Style the shadow-DOM input to match Tabler .form-control. */
+.loc-address-search-host gmp-place-autocomplete::part(input) {
+    display: block;
+    width: 100%;
+    padding: 0.5625rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.4285714286;
+    color: var(--tblr-body-color, #1d273b);
+    background-color: var(--tblr-bg-forms, #ffffff);
+    background-clip: padding-box;
+    border: var(--tblr-border-width, 1px) solid var(--tblr-border-color, #dadfe5);
+    appearance: none;
+    border-radius: var(--tblr-border-radius, 4px);
+    box-shadow: var(--tblr-box-shadow-input, rgba(15, 23, 42, 0.04) 0 1px 1px 0);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.loc-address-search-host gmp-place-autocomplete::part(input):focus {
+    color: var(--tblr-body-color, #1d273b);
+    background-color: var(--tblr-bg-forms, #ffffff);
+    border-color: rgba(var(--tblr-primary-rgb), 0.5);
+    outline: 0;
+    box-shadow: var(--tblr-shadow-input), 0 0 0 0.25rem rgba(var(--tblr-primary-rgb), 0.25);
+}
+
+.loc-address-search-host gmp-place-autocomplete[disabled]::part(input),
+.loc-address-search-host gmp-place-autocomplete::part(input):disabled {
+    background-color: var(--tblr-bg-surface-secondary, #f6f8fb);
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+.loc-address-search-host gmp-place-autocomplete::part(input)::placeholder {
+    color: var(--tblr-secondary, #99a0ac);
+    opacity: 1;
+}
+
+/* Predictions dropdown styling — keep it consistent with Tabler dropdowns
+   and make sure it floats above modal/offcanvas surfaces (1111 matches
+   the .ts-dropdown rule in custom.css). */
+.loc-address-search-host gmp-place-autocomplete::part(prediction-list) {
+    z-index: 1111;
+    border: var(--tblr-border-width, 1px) solid var(--tblr-border-color, #dadfe5);
+    border-radius: var(--tblr-border-radius, 4px);
+    background-color: var(--tblr-bg-surface, #ffffff);
+    box-shadow: 0 0.5rem 1rem rgba(15, 23, 42, 0.08);
+    margin-top: 0.25rem;
+}
+
+.loc-address-search-host gmp-place-autocomplete::part(prediction-item) {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    color: var(--tblr-body-color, #1d273b);
+    cursor: pointer;
+}
+
+.loc-address-search-host gmp-place-autocomplete::part(prediction-item):hover,
+.loc-address-search-host gmp-place-autocomplete::part(prediction-item-selected) {
+    background-color: var(--tblr-bg-surface-secondary, #f6f8fb);
+}
+
+.loc-address-search-host gmp-place-autocomplete::part(main-text) {
+    font-weight: 500;
+}
+
+.loc-address-search-host gmp-place-autocomplete::part(secondary-text) {
+    color: var(--tblr-secondary, #99a0ac);
+    font-size: 0.8125rem;
+}

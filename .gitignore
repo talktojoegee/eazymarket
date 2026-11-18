@@ -1,0 +1,33 @@
+.DS_Store
+**/.DS_Store
+
+# Local secrets
+**/.env
+**/.env.*
+!**/.env.example
+**/.env.backup
+**/license.json
+**/service-account-file.json
+**/auth.json
+
+# Dependencies
+**/vendor/
+**/node_modules/
+
+# Laravel runtime
+**/storage/logs/
+**/storage/framework/cache/data/
+**/storage/framework/sessions/
+**/storage/framework/views/
+**/storage/framework/testing/
+**/bootstrap/cache/*.php
+**/storage/app/installer-progress.*
+
+# Flutter and Next build output
+**/.dart_tool/
+**/build/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/.next/
+**/out/
